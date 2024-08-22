@@ -12,4 +12,4 @@ lot=float(input("Enter your Lot: "))
 kg= (talent*20*32*13.3 + pounds*32*13.3 + lot*13.3)
 kg1=kg//1000
 gram=kg%1000
-print(f"The weight in modern units:\n{kg1} kilograms and {gram} grams")
+print(f"The weight in modern units:\n{kg1} kilograms and {gram:.2f} grams")
