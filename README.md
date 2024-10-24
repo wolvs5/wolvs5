@@ -160,12 +160,14 @@ select game.screen_name from game where game.id in ( select goal_reached.game_id
 Question 4:
 
 select country.name from country where country.iso_country not in ( select airport.iso_country from airport );
+
 ![Screenshot 2024-09-29 230915](https://github.com/user-attachments/assets/1a0ea99f-912e-41ff-88e7-5188a8ef663e)
 
 Question 5:
 
 select goal.name from goal where goal.id not in ( select goal_reached.goal_id from goal_reached where goal_reached.game_id in ( select game.id from game where game.screen_name = 'Heini' ) );
-![Screenshot 2024-09-29 231216](https://github.com/user-attachments/assets/57d142b7-f839-4026-af59-8f75e529d478)
+![image](https://github.com/user-attachments/assets/52f130e7-1c51-45fb-b94b-ceb32ede032e)
+
 
 Exercises 6: Aggregate Queries
 Question 1:
@@ -193,12 +195,6 @@ Question 5:
 select country.name, count() from airport left join country on airport.iso_country = country.iso_country group by country.iso_country order by count() desc limit 50;
 ![Screenshot 2024-09-29 232138](https://github.com/user-attachments/assets/171658cb-e027-4b54-bd90-a5f41e7cbc36)
 
-
-
-
-![Screenshot 2024-09-29 230832](https://github.com/user-attachments/assets/8364f6b3-5f50-43d8-88b1-09f35e6317cf)
-
-![Screenshot 2024-09-29 230832](https://github.com/user-attachments/assets/90668999-e1a6-42a5-8e0a-e92c388b3086)
 
 
 
