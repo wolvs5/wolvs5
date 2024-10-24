@@ -108,23 +108,27 @@ select country.name from goal, airport, game, goal_reached, country where countr
 
 Exercises 4: Join
 Question 1:
-![Screenshot 2024-09-29 222339](https://github.com/user-attachments/assets/df64831a-5997-4d7a-a30a-87b17ae34252)
 select country.name as 'country name', airport.name as 'airport.name' from country join airport on country.iso_country = airport.iso_country where country.iso_country = 'FI' and airport.scheduled_service = 'yes';
-![Screenshot 2024-09-29 222405](https://github.com/user-attachments/assets/64ac72d2-fe0d-46d1-98ae-7f47294f6245)
+![Screenshot 2024-09-29 222339](https://github.com/user-attachments/assets/df64831a-5997-4d7a-a30a-87b17ae34252)
+
 
 Question 2:
 
 select game.screen_name, airport.name from game join airport on game.location = airport.ident;
-![Screenshot 2024-09-29 222446](https://github.com/user-attachments/assets/62c97658-af7f-4f85-b9ac-12ee6e2cffe6)
+![Screenshot 2024-09-29 222405](https://github.com/user-attachments/assets/64ac72d2-fe0d-46d1-98ae-7f47294f6245)
+
 
 Question 3:
 
 select game.screen_name, country.name from game join airport on game.location = airport.ident join country on airport.iso_country = country.iso_country;
-![Screenshot 2024-09-29 222533](https://github.com/user-attachments/assets/919afc8e-e00a-4817-b45c-58b2d1b63cc3)
+![Screenshot 2024-09-29 222446](https://github.com/user-attachments/assets/62c97658-af7f-4f85-b9ac-12ee6e2cffe6)
+
 
 Question 4:
 
 select airport.name, game.screen_name from airport left join game on airport.ident = game.location where airport.name like '%Hels%';
+![Screenshot 2024-09-29 222533](https://github.com/user-attachments/assets/919afc8e-e00a-4817-b45c-58b2d1b63cc3)
+
 ![Screenshot 2024-09-29 222612](https://github.com/user-attachments/assets/cbdbccee-2285-4ecb-a198-aa01fbae2273)
 
 Question 5:
@@ -136,7 +140,7 @@ Exercises 5: Subqueries
 Question 1:
 
 select country.name from country where country.iso_country in ( select airport.iso_country from airport where airport.name like 'Satsuma%' );
-![Screenshot 2024-09-29 230737](https://github.com/user-attachments/assets/bb6bdf44-605f-45fb-9346-9d55debdf1ae)
+
 
 Question 2:
 
@@ -162,6 +166,7 @@ Exercises 6: Aggregate Queries
 Question 1:
 
 select max(elevation_ft) from airport;
+![Screenshot 2024-09-29 230737](https://github.com/user-attachments/assets/bb6bdf44-605f-45fb-9346-9d55debdf1ae)
 ![Screenshot 2024-09-29 231253](https://github.com/user-attachments/assets/ef04e606-9eff-4970-95fa-79ad8f291394)
 
 Question 2:
