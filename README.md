@@ -29,7 +29,8 @@ select name from country where name like 'f%';
 Question 6:
 
 Select name as name from country where name like '%f%';
-![Screenshot 2024-09-29 220353](https://github.com/user-attachments/assets/06127329-550d-4f22-905b-734203ccc915)
+![image](https://github.com/user-attachments/assets/3ba16910-2122-401b-9d3b-98081f098987)
+
 
 Question 7:
 
