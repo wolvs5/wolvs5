@@ -129,18 +129,19 @@ Question 4:
 select airport.name, game.screen_name from airport left join game on airport.ident = game.location where airport.name like '%Hels%';
 ![Screenshot 2024-09-29 222533](https://github.com/user-attachments/assets/919afc8e-e00a-4817-b45c-58b2d1b63cc3)
 
-![Screenshot 2024-09-29 222612](https://github.com/user-attachments/assets/cbdbccee-2285-4ecb-a198-aa01fbae2273)
+
 
 Question 5:
 
 select goal.name, game.screen_name from goal left join goal_reached on goal.id = goal_reached.goal_id left join game on goal_reached.game_id = game.id;
-![Screenshot 2024-09-29 222750](https://github.com/user-attachments/assets/646025e5-2a6c-49f4-95c7-baf1781abf6a)
+![Screenshot 2024-09-29 222612](https://github.com/user-attachments/assets/cbdbccee-2285-4ecb-a198-aa01fbae2273)
+
 
 Exercises 5: Subqueries
 Question 1:
 
 select country.name from country where country.iso_country in ( select airport.iso_country from airport where airport.name like 'Satsuma%' );
-
+![Screenshot 2024-09-29 222750](https://github.com/user-attachments/assets/646025e5-2a6c-49f4-95c7-baf1781abf6a)
 
 Question 2:
 
