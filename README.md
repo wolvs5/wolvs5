@@ -146,12 +146,16 @@ select country.name from country where country.iso_country in ( select airport.i
 Question 2:
 
 select airport.name from airport where airport.iso_country in ( select country.iso_country from country where country.name = 'Monaco' );
-![Screenshot 2024-09-29 230832](https://github.com/user-attachments/assets/8364f6b3-5f50-43d8-88b1-09f35e6317cf)
+![image](https://github.com/user-attachments/assets/cc726665-7b00-46b0-b468-496ca993b676)
+
+
 
 Question 3:
 
 select game.screen_name from game where game.id in ( select goal_reached.game_id from goal_reached where goal_reached.goal_id in ( select goal.id from goal where goal.name = 'CLOUDS' ) );
-![Screenshot 2024-09-29 230832](https://github.com/user-attachments/assets/90668999-e1a6-42a5-8e0a-e92c388b3086)
+![image](https://github.com/user-attachments/assets/29c4b09b-9853-4fda-9fd8-93822aeb01eb)
+
+
 
 Question 4:
 
@@ -192,9 +196,9 @@ select country.name, count() from airport left join country on airport.iso_count
 
 
 
+![Screenshot 2024-09-29 230832](https://github.com/user-attachments/assets/8364f6b3-5f50-43d8-88b1-09f35e6317cf)
 
-
-
+![Screenshot 2024-09-29 230832](https://github.com/user-attachments/assets/90668999-e1a6-42a5-8e0a-e92c388b3086)
 
 
 
