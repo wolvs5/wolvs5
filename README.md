@@ -72,41 +72,43 @@ select country.name as 'country_name', airport.name as 'airport name' from airpo
 Question 4:
 
 select airport.elevation_ft from airport, game where game.location = airport.ident and game.screen_name = 'Heini';
-![Screenshot 2024-09-29 221017](https://github.com/user-attachments/assets/7b800d62-d2eb-42f6-903d-1441bfb08770)
+![Screenshot 2024-09-29 221054](https://github.com/user-attachments/assets/cf34b8e1-9484-40ca-8621-4cfcec4849ed)
 
 Question 5:
 
 select airport.elevation_ft * 0.3048 as 'elevation_m' from airport, game where game.location = airport.ident and game.screen_name = 'Heini';
-![Screenshot 2024-09-29 221054](https://github.com/user-attachments/assets/cf34b8e1-9484-40ca-8621-4cfcec4849ed)
+![Screenshot 2024-09-29 221133](https://github.com/user-attachments/assets/17dedee6-bf5f-4a17-8ac1-1339c079086f)
 
 Question 6:
 
 select name from game, airport where airport.ident = game.location and game.screen_name = 'Ilkka';
-![Screenshot 2024-09-29 221133](https://github.com/user-attachments/assets/17dedee6-bf5f-4a17-8ac1-1339c079086f)
+![Screenshot 2024-09-29 221208](https://github.com/user-attachments/assets/0def2367-3982-4ac3-83b9-c03292105b3a)
+
 
 Question 7:
 
 select country.name from airport, game, country where game.screen_name = 'Ilkka' and game.location = airport.ident and airport.iso_country = country.iso_country;
-![Screenshot 2024-09-29 221208](https://github.com/user-attachments/assets/0def2367-3982-4ac3-83b9-c03292105b3a)
+![Screenshot 2024-09-29 221242](https://github.com/user-attachments/assets/41fecc06-9792-4ec6-8539-b0e30c9a521a)
 
 Question 8:
 
 select goal.name from goal, goal_reached, game where game.screen_name = 'Heini' and game.id = goal_reached.game_id and goal_reached.goal_id = goal.id;
-![Screenshot 2024-09-29 221242](https://github.com/user-attachments/assets/41fecc06-9792-4ec6-8539-b0e30c9a521a)
+![image](https://github.com/user-attachments/assets/8e4970ba-d808-421a-99cc-42790bd1dab0)
 
 Question 9:
 
 select airport.name from goal, airport, game, goal_reached where game.screen_name = 'Ilkka' and game.location = airport.ident and game.id = goal_reached.game_id and goal_reached.goal_id = goal.id and goal.name = 'CLOUDS';
-![Screenshot 2024-09-29 222339](https://github.com/user-attachments/assets/1456723e-75f9-4716-a4ef-6e1896db63d7)
+![image](https://github.com/user-attachments/assets/1af96d3a-b37a-448b-9854-f0a607f43da9)
 
 Question 10
 
 select country.name from goal, airport, game, goal_reached, country where country.iso_country = airport.iso_country and game.screen_name = 'Ilkka' and game.location = airport.ident and game.id = goal_reached.game_id and goal_reached.goal_id = goal.id and goal.name = 'CLOUDS';
-![Screenshot 2024-09-29 222339](https://github.com/user-attachments/assets/df64831a-5997-4d7a-a30a-87b17ae34252)
+![image](https://github.com/user-attachments/assets/2f9f01a8-152d-4572-ac3a-bfc53ce84d71)
+
 
 Exercises 4: Join
 Question 1:
-
+![Screenshot 2024-09-29 222339](https://github.com/user-attachments/assets/df64831a-5997-4d7a-a30a-87b17ae34252)
 select country.name as 'country name', airport.name as 'airport.name' from country join airport on country.iso_country = airport.iso_country where country.iso_country = 'FI' and airport.scheduled_service = 'yes';
 ![Screenshot 2024-09-29 222405](https://github.com/user-attachments/assets/64ac72d2-fe0d-46d1-98ae-7f47294f6245)
 
