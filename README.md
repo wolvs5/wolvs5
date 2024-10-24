@@ -179,24 +179,29 @@ select max(elevation_ft) from airport;
 Question 2:
 
 select continent, count(*) from country group by continent;
+![image](https://github.com/user-attachments/assets/0e21b1e6-14d8-4f08-a1e8-16e723fd6ea0)
 
 
 Question 3:
 
 select game.screen_name, count(*) from game right join goal_reached on game.id = goal_reached.game_id group by screen_name;
+![image](https://github.com/user-attachments/assets/c5bd6d4b-b830-40b9-823c-a442457b3819)
 
 
 Question 4:
 
 select game.screen_name from game where game.co2_consumed in ( select min(game.co2_consumed) from game );
+![image](https://github.com/user-attachments/assets/faeb29d7-fb09-4c9a-a4dd-212cd8c418e2)
 
 Question 5:
 
 select country.name, count() from airport left join country on airport.iso_country = country.iso_country group by country.iso_country order by count() desc limit 50;
+![image](https://github.com/user-attachments/assets/06df86d8-2caf-4bb8-984b-168437d7c155)
 
 Question 6:
 
 select country.name from airport join country on airport.iso_country = country.iso_country group by country.iso_country having count(*)>=1000;
+![image](https://github.com/user-attachments/assets/548d284e-054b-4287-aa1c-e36dd7d084ce)
 
 Question 7:
 
@@ -207,14 +212,17 @@ select airport.name from airport where elevation_ft in (select max(elevation_ft)
 Question 8:
 
 select country.name from country join airport on country.iso_country = airport.iso_country where airport.elevation_ft in (select max(elevation_ft) from airport);
+![image](https://github.com/user-attachments/assets/c4422c9d-c1e4-4016-8562-5c4755351d57)
 
 Question 9:
 
 select count(*) from goal_reached left join game on goal_reached.game_id = game.id where game.screen_name = 'Vesa';
+![image](https://github.com/user-attachments/assets/2fe9646f-59b9-4a0f-b782-d148b666ef7f)
 
 Question 10:
 
 select airport.name from airport where latitude_deg in ( select min(latitude_deg) from airport );
+![image](https://github.com/user-attachments/assets/05e76d65-fe88-4203-a9c3-66b48c062c26)
 
 
 
@@ -223,6 +231,7 @@ Exercises 7: Update Queries
 Question 1:
 
 update game set co2_consumed = co2_consumed + 500, location = ( select airport.ident from airport where name = 'Nottingham Airport' ) where screen_name = 'Vesa';
+![image](https://github.com/user-attachments/assets/ff0bdd7a-c1d9-4155-b0a1-f45019b6c078)
 
 Question 2:
 
