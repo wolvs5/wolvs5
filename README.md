@@ -174,32 +174,90 @@ Question 1:
 
 select max(elevation_ft) from airport;
 ![Screenshot 2024-09-29 230737](https://github.com/user-attachments/assets/bb6bdf44-605f-45fb-9346-9d55debdf1ae)
-![Screenshot 2024-09-29 231253](https://github.com/user-attachments/assets/ef04e606-9eff-4970-95fa-79ad8f291394)
+
 
 Question 2:
 
 select continent, count(*) from country group by continent;
-![Screenshot 2024-09-29 231328](https://github.com/user-attachments/assets/5787b490-96d8-406f-bf2b-bab94a08d90d)
+
 
 Question 3:
 
 select game.screen_name, count(*) from game right join goal_reached on game.id = goal_reached.game_id group by screen_name;
-![Screenshot 2024-09-29 231424](https://github.com/user-attachments/assets/0afa29e7-7cc1-459e-a107-deb44e48ddbf)
+
 
 Question 4:
 
 select game.screen_name from game where game.co2_consumed in ( select min(game.co2_consumed) from game );
-![Screenshot 2024-09-29 232138](https://github.com/user-attachments/assets/ae12ad9c-b3cb-4412-abf9-ea9f5e242f30)
+
 Question 5:
 
 select country.name, count() from airport left join country on airport.iso_country = country.iso_country group by country.iso_country order by count() desc limit 50;
-![Screenshot 2024-09-29 232138](https://github.com/user-attachments/assets/171658cb-e027-4b54-bd90-a5f41e7cbc36)
+
+Question 6:
+
+select country.name from airport join country on airport.iso_country = country.iso_country group by country.iso_country having count(*)>=1000;
+
+Question 7:
+
+select airport.name from airport where elevation_ft in (select max(elevation_ft) from airport);
+![Screenshot 2024-09-29 231253](https://github.com/user-attachments/assets/ef04e606-9eff-4970-95fa-79ad8f291394)
+
+
+Question 8:
+
+select country.name from country join airport on country.iso_country = airport.iso_country where airport.elevation_ft in (select max(elevation_ft) from airport);
+
+Question 9:
+
+select count(*) from goal_reached left join game on goal_reached.game_id = game.id where game.screen_name = 'Vesa';
+
+Question 10:
+
+select airport.name from airport where latitude_deg in ( select min(latitude_deg) from airport );
 
 
 
+Exercises 7: Update Queries
 
+Question 1:
 
+update game set co2_consumed = co2_consumed + 500, location = ( select airport.ident from airport where name = 'Nottingham Airport' ) where screen_name = 'Vesa';
 
+Question 2:
+
+b. goal_reached
+
+Question 3:
+
+delete from goal_reached;
+
+Question 4:
+
+delete from game;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Exercises 8: Database Design
+Question 1: ident
+
+Question 2: airport
+
+Question 3: b. Each country can have multiple airports.
+
+Question 4: True
+
+Question 5: True
+
+Question 6: c. The airport table will have a foreign key that references the country table.
+
+Question 7: b. The game table will have a foreign key that references the airport table.
+
+Question 8: True
+
+Question 9: a. The relationship diamond will have its own table.
+
+Question 10: a. Two foreign keys: One referencing the game table and another referencing the goal table.
 
 
 
