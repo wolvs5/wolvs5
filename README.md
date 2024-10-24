@@ -5,8 +5,6 @@ question no 1:
 select * from goal;
 ![Screenshot 2024-09-29 220149](https://github.com/user-attachments/assets/67cbe15d-f4e6-41d6-ae05-702cfbee6115)
 
-
-
 Question 2:
 
 select name from airport where iso_country ='FI';
