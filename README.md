@@ -1,4 +1,5 @@
 Exercises 2: single table queries
+
 question no 1:
 select * from goal;
 ![Screenshot 2024-09-29 220149](https://github.com/user-attachments/assets/67cbe15d-f4e6-41d6-ae05-702cfbee6115)
@@ -7,7 +8,7 @@ select * from goal;
 
 Question 2:
 
-select name from airport where iso_country ='F
+select name from airport where iso_country ='FI';
 ![Screenshot 2024-09-29 220213](https://github.com/user-attachments/assets/7742ea5d-037f-4863-8fed-23c61a5e36dc)
 
 Question 3:
