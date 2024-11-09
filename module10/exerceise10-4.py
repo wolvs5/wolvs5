@@ -47,7 +47,7 @@ class Race:
                 return True
         return False
 
-#main
+
 car_list = []
 
 print("Creating car list....")

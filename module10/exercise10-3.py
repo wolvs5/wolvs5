@@ -40,7 +40,7 @@ class building:
             print(f"Elevator {i+1} going down")
             self.elevator_list[i].go_to_floor(self.bottom_floor)
 
-#main
+
 print("Create new building....")
 top_floor = int(input("Enter your top floor: "))
 elevator_count = int(input("Enter number of elevators: "))
